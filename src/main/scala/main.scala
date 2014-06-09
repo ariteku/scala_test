@@ -11,6 +11,12 @@ object main {
 
     //test ケースクラスをデータ表示用のMapに変換して表示
     CaseClassToMap.usersPrint()
+
+    //パターンマッチを試す
+    PatternMatch.pattern_match(Some("Stringだよー"))
+    PatternMatch.map_match_bad_pattern()
+    PatternMatch.map_match_good_pattern()
+    PatternMatch.pattern_match_if()
   }
 }
 
