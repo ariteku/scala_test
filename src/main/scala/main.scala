@@ -29,6 +29,13 @@ object main {
     val replaceQueryString = queryStringReplacePage(rowQueryString, 2)
     println(replaceQueryString)
     // > hoge=abc&count=15&page=2
+
+    Status.valueOf(2)
+    //res1: Status = BLOCKED
+
+    println(s"key:  ${Status.PENDING.key}")
+    println(s"value:${Status.PENDING.value}")
+
   }
 
   def queryStringReplacePage(queryString:String, page:Int):String = {
@@ -38,6 +45,27 @@ object main {
 
     //page=2を結合し、&区切りでクエリストリング生成
     (trim_page_param ++ Seq(s"page=$page")).mkString("&")
+  }
+
+}
+
+//列挙型
+object Status {
+  sealed abstract class Status(val key:Int, val value: String) {}
+  case object PENDING  extends Status(0,"申請中")
+  case object DENIED   extends Status(1,"否定")
+  case object BLOCKED  extends Status(2,"ブロック")
+  case object DELETED  extends Status(3,"削除")
+  case object CANCELED extends Status(4,"キャンセル")
+
+  val values = Array(PENDING,DENIED,BLOCKED,DELETED,CANCELED)
+
+  //keyから対象を取得
+  def valueOf(key:Int):Status = {
+    values.filter(i => i.key == key) match {
+      case i if i.size == 1 => i.head
+      case _ => throw new IllegalArgumentException(s"Status: not such key -> $key")
+    }
   }
 
 }
