@@ -22,7 +22,7 @@ object future04 {
     x
   }
 
-  /** 非同期処理に同時実行(4秒で終わる) core i7環境 */
+  /** 非同期処理に同時実行(3秒で終わる) core i7環境 */
   def f()  = {
     val r = new Random
     def rand = r.nextInt(4) + 1
