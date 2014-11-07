@@ -6,7 +6,7 @@ import scala.concurrent.duration.Duration
 import ExecutionContext.Implicits.global
 import scala.util.{Failure, Success, Random}
 
-object futureThreadLimit {
+object futureOutOfMemory {
   /** main */
   def main(args: Array[String]) {
     Console println "Thread作りすぎてout of memory"
