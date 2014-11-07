@@ -2,7 +2,7 @@ import scala.concurrent.duration.Duration
 import scala.concurrent._
 import ExecutionContext.Implicits.global
 
-object future01 {
+object future02 {
 
   /** main */
   def main(args: Array[String]) {
