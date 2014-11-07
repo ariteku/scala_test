@@ -5,9 +5,9 @@ import akka.actor.Actor
 object akka {
   def main(args: Array[String]): Unit = {
     val system = ActorSystem("helloSystem")
-    val router = system.actorOf(Props[HelloActor])
+    val helloActor = system.actorOf(Props[HelloActor])
     
-    router ! "Hello"
+    helloActor ! "Hello"
   }
 
   class HelloActor extends Actor {
