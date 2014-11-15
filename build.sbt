@@ -1,4 +1,4 @@
-scalaVersion := "2.11.0"
+scalaVersion := "2.11.2"
 
 val scalazVersion = "7.1.0"
 
@@ -8,7 +8,9 @@ libraryDependencies ++= Seq(
   "ch.qos.logback"  %  "logback-classic"   % "1.1.2",
   "org.scalaz"      %% "scalaz-effect"     % scalazVersion,
   "org.scalaz"      %% "scalaz-core"       % scalazVersion,
-  "org.specs2"      %% "specs2"            % "2.3.12" % "test"
+  "org.specs2"      %% "specs2"            % "2.3.12" % "test",
+  "com.chuusai"     %% "shapeless"         % "2.0.0",
+  "org.apache.commons" % "commons-vfs2"    % "2.0"
 )
 
 scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature", "-language:higherKinds", "-language:implicitConversions")
